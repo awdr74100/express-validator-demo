@@ -1,0 +1,35 @@
+@baseurl = http://localhost:3000/api
+
+POST {{baseurl}}/users/signup HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "qwdqf884qwf",
+  "email": "aadd2grg8@stust.edu.tw",
+  "password": "12548dd84d83"
+}
+
+###
+
+POST {{baseurl}}/users/signin HTTP/1.1
+Content-Type: application/json
+
+{
+  "usernameOrEmail": ""
+}
+
+###
+POST {{baseurl}}/users/body HTTP/1.1
+Content-Type: application/json
+
+{
+  "products": {
+    "price": 200,
+    "total": 1,
+    "title": "沐浴乳"
+  }
+}
+
+###
+
+POST {{baseurl}}/users/params/{{$randomInt 10 10000}} HTTP/1.1
